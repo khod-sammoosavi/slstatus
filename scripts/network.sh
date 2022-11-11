@@ -7,9 +7,9 @@ wire="$(ip a | grep 'eth0\|enp' | grep inet | wc -l)"
 wifi="$(ip a | grep 'wlp.' | grep inet | wc -l)"
 
 if [ $wire = 1 ]; then 
-    echo "  $(nmcli -t -f active,ssid dev wifi | grep "^yes:.*[a-zA-Z]" | cut -d ':' -f2)"
+    echo " $(nmcli -t -f active,ssid dev wifi | grep "^yes:.*[a-zA-Z]" | cut -d ':' -f2)"
 elif [ $wifi = 1 ]; then
-    echo "  $(nmcli -t -f active,ssid dev wifi | grep "^yes:.*[a-zA-Z]" | cut -d ':' -f2)"
+    echo " $(nmcli -t -f active,ssid dev wifi | grep "^yes:.*[a-zA-Z]" | cut -d ':' -f2)"
 else 
     echo "睊 Disconnect"
 fi
