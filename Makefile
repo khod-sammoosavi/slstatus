@@ -43,7 +43,7 @@ slstatus: slstatus.o $(COM:=.o) $(REQ:=.o)
 	$(CC) -o $@ $(LDFLAGS) $(COM:=.o) $(REQ:=.o) slstatus.o $(LDLIBS)
 
 clean:
-	rm -f slstatus slstatus.o $(COM:=.o) $(REQ:=.o) bin/clock bin/volume
+	rm -f slstatus slstatus.o $(COM:=.o) $(REQ:=.o) bin/clock bin/volume /bin/network
 
 dist:
 	rm -rf "slstatus-$(VERSION)"
@@ -65,6 +65,8 @@ install: all
 	chmod +x /bin/clock
 	cp -f scripts/volume.sh /bin/volume
 	chmod +x /bin/volume
+	cp -f scripts/network.sh /bin/network
+	chmod +x /bin/network
 
 uninstall:
 	rm -f "$(DESTDIR)$(PREFIX)/bin/slstatus"
