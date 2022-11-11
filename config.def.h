@@ -71,5 +71,5 @@ static const struct arg args[] = {
 	{ run_command,		"  %s%% ",		"cat /sys/class/power_supply/BAT0/capacity"},
 	{ run_command,		"  %s%% ",		"pamixer --get-volume" },
 	{ run_command,		"  %s ",		"cat /proc/net/wireless | perl -ne '/(\\w+):/ && print $1'" },
-	{ datetime,		"  %s ",   		"%I:%M %p" },
+	{ run_command,		" %s ",   		"clock" },
 };

@@ -43,7 +43,7 @@ slstatus: slstatus.o $(COM:=.o) $(REQ:=.o)
 	$(CC) -o $@ $(LDFLAGS) $(COM:=.o) $(REQ:=.o) slstatus.o $(LDLIBS)
 
 clean:
-	rm -f slstatus slstatus.o $(COM:=.o) $(REQ:=.o)
+	rm -f slstatus slstatus.o $(COM:=.o) $(REQ:=.o) bin/clock
 
 dist:
 	rm -rf "slstatus-$(VERSION)"
@@ -61,6 +61,8 @@ install: all
 	mkdir -p "$(DESTDIR)$(MANPREFIX)/man1"
 	cp -f slstatus.1 "$(DESTDIR)$(MANPREFIX)/man1"
 	chmod 644 "$(DESTDIR)$(MANPREFIX)/man1/slstatus.1"
+	cp -f scripts/clock.sh /bin/clock
+	chmod +x /bin/clock
 
 uninstall:
 	rm -f "$(DESTDIR)$(PREFIX)/bin/slstatus"
