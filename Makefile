@@ -43,7 +43,7 @@ slstatus: slstatus.o $(COM:=.o) $(REQ:=.o)
 	$(CC) -o $@ $(LDFLAGS) $(COM:=.o) $(REQ:=.o) slstatus.o $(LDLIBS)
 
 clean:
-	rm -f slstatus slstatus.o $(COM:=.o) $(REQ:=.o) bin/clock
+	rm -f slstatus slstatus.o $(COM:=.o) $(REQ:=.o) bin/clock bin/volume
 
 dist:
 	rm -rf "slstatus-$(VERSION)"
@@ -63,6 +63,8 @@ install: all
 	chmod 644 "$(DESTDIR)$(MANPREFIX)/man1/slstatus.1"
 	cp -f scripts/clock.sh /bin/clock
 	chmod +x /bin/clock
+	cp -f scripts/volume.sh /bin/volume
+	chmod +x /bin/volume
 
 uninstall:
 	rm -f "$(DESTDIR)$(PREFIX)/bin/slstatus"
