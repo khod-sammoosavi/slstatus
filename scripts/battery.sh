@@ -6,7 +6,7 @@ bat() {
     batstat=""
     elif [[ $battery -ge 5 ]] && [[ $battery -le 19 ]]; then
     batstat=""
-    elif [[ $battery -eq 19 ]] && [[ $batstat != 'Unknown' ]] || [[ $batstat != 'Charging' ]]; then
+    elif [[ $battery -eq 19 ]] && [[ $batstat -ne 'Unknown' ]] || [[ $batstat -ne 'Charging' ]]; then
     notify-send 'The battery is low, please charge.'
     elif [[ $battery -ge 20 ]] && [[ $battery -le 39 ]]; then
     batstat=""
