@@ -66,13 +66,9 @@ static const char unknown_str[] = "!!!NONE!!!";
 static const struct arg args[] = {
 /*      function		format		        argument */
 	{ run_command, 		"  %s ",		"uname --kernel-release | sed 's/[-].*//'" },
-	{ keymap,		"  %s ",        	NULL },
-	{ ram_perc,		"  %s%% ",		NULL },
-	{ run_command,		"  %s%% ",		"cat /sys/class/power_supply/BAT0/capacity"},
-	{ run_command,		"  %s%% ",		"pamixer --get-volume" },
-	{ run_command,		"  %s ",		"cat /proc/net/wireless | perl -ne '/(\\w+):/ && print $1'" },
-
+	{ keymap,		      "  %s",        	NULL },
 	{ run_command,		" %s",   		"volume" },
+	{ run_command,		" %s",   		"battery" },
 	{ run_command,		" %s",   		"network" },
-	{ run_command,		" %s ",   		"clock" },
+	{ run_command,		"%s ",   		"clock" },
 };

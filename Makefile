@@ -43,7 +43,7 @@ slstatus: slstatus.o $(COM:=.o) $(REQ:=.o)
 	$(CC) -o $@ $(LDFLAGS) $(COM:=.o) $(REQ:=.o) slstatus.o $(LDLIBS)
 
 clean:
-	rm -f slstatus slstatus.o $(COM:=.o) $(REQ:=.o) bin/clock bin/volume /bin/network
+	rm -f slstatus slstatus.o $(COM:=.o) $(REQ:=.o) bin/clock bin/volume /bin/network /bin/battery
 
 dist:
 	rm -rf "slstatus-$(VERSION)"
@@ -67,6 +67,8 @@ install: all
 	chmod +x /bin/volume
 	cp -f scripts/network.sh /bin/network
 	chmod +x /bin/network
+	cp -f scripts/battery.sh /bin/battery
+	chmod +x /bin/battery
 
 uninstall:
 	rm -f "$(DESTDIR)$(PREFIX)/bin/slstatus"
