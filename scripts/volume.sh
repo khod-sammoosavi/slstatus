@@ -6,13 +6,13 @@ VOL=$(amixer -D pulse get Master | grep Left: | sed 's/[][%]//g' | awk '{print $
 if [ "$VOL" -eq "0" ]; then
   icon="婢"
 elif [ "$VOL" -lt "15" ]; then
-  icon="奄"
+  icon=""
 elif [ "$VOL" -lt "35" ]; then
-  icon="奔"
+  icon=""
 elif [ "$VOL" -lt "65" ];then
-  icon="墳"
+  icon="󰕾"
 elif [ "$VOL" -ge "65" ];then
   icon=""
 fi
 
-echo "$icon $VOL%"
+echo " $icon $VOL"
