@@ -11,7 +11,7 @@ if [ $wire = 1 ]; then
 elif [ $wifi = 1 ]; then
     echo ""
 else 
-    echo "睊 Disconnect"
+    echo "󰤭 Disconnect"
 fi
 }
 
