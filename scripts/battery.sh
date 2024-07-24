@@ -24,7 +24,7 @@ bat() {
     batstat="󰁹"
     fi
 
-    echo " $batstat $battery%"
+    echo "$batstat"
 }
 
 echo "$(bat)"

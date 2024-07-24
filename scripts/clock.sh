@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo $(date "+%A %B %d %I:%M %p")
+echo $(date "+%a %b %d %I:%M")

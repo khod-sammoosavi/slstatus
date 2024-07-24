@@ -66,9 +66,10 @@ static const char unknown_str[] = "!!!NONE!!!";
 static const struct arg args[] = {
 /*      function		format		        argument */
 	{ run_command, 		" 󰣇 %s ",		"uname --kernel-release | sed 's/[-].*//'" },
-	{ keymap,		      " 󰌌 %s",   	NULL },
-	{ run_command,		" %s",   		"volume" },
-	{ run_command,		" %s",   		"battery" },
-	{ run_command,		" %s",   		"network" },
-	{ run_command,		" %s ",  		"clock" },
+	{ ram_used,		    "   %s ",   	NULL },
+	{ keymap,		      "   %s",   	NULL },
+	{ run_command,		"  %s",   		"volume" },
+	{ run_command,		"  %s",   		"battery" },
+	{ run_command,		"  %s",   		"network" },
+	{ run_command,		"  %s ",  		"clock" },
 };
