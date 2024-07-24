@@ -15,4 +15,4 @@ elif [ "$VOL" -ge "60" ];then
   icon=" "
 fi
 
-echo " $icon"
+echo " $icon$VOL "
